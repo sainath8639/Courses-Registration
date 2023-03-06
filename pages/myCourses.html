@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Regestration</title>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -14,14 +12,15 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./index.css" />
+    <title>My Courses</title>
+    <link rel="stylesheet" href="../styles/myCourses.css" />
   </head>
   <body>
     <header>
       <div class="header">
         <!-- Header image -->
         <div class="header-image">
-          <img src="./images/logo.png" width="100px" height="100px" alt="" />
+          <img src="../images/logo.png" width="100px" height="100px" alt="" />
         </div>
         <!-- Header Items -->
         <div class="header-items">
@@ -29,7 +28,7 @@
             <i class="fa-solid fa-book"></i>
           </div>
           <div class="header-items-name">
-            <h1>Course Regestration</h1>
+            <h1>My Courses</h1>
           </div>
         </div>
         <!-- Header User -->
@@ -44,9 +43,9 @@
             <!-- Profile and Options -->
             <div class="profile-options">
               <ul>
-                <li><a href="./pages/myCourses.html">My Courses </a></li>
-                <!-- <li><a href="./">Register Courses</a></li> -->
-                <li><a href="./pages/admin.html"> Admin </a></li>
+                <!-- <li><a href="./pages/myCourses.html">My Courses </a></li> -->
+                <li><a href="../index.html">Register Courses</a></li>
+                <li><a href="../pages/admin.html"> Admin </a></li>
               </ul>
             </div>
           </div>
@@ -57,24 +56,8 @@
     <section>
       <!-- Sem Selector -->
       <div class="sem-selector">
-        <p>Please select the semester to select the courses</p>
+        <p>Please select the semester to see the regestered courses</p>
         <div class="semester">
-          <!-- <div class="dropdown">
-        <p>Select the semester by clicking on the below button</p>
-        <button style="display: inline-block">
-          Choose sem
-          <i
-            style="display: inline-block"
-            class="fa-sharp fa-solid fa-caret-down"
-          ></i>
-        </button>
-        <ul>
-          <li>1st sem</li>
-          <li>2nd sem</li>
-          <li>3rd sem</li>
-        </ul>
-      </div> -->
-
           <select name="semester" id="">
             <option value="sem1"><span> 1st sem</span></option>
             <option value="sem2"><span> 2nd sem</span></option>
@@ -91,7 +74,6 @@
               <th>CourseName</th>
               <th>Credits</th>
               <th>Proffessor</th>
-              <th>Enroll (Yes/No)</th>
             </tr>
           </thead>
           <tbody>
@@ -99,61 +81,26 @@
               <td>Image Processing</td>
               <td>4</td>
               <td>Trilok Panth</td>
-              <td></td>
             </tr>
             <tr>
               <td>Image Processing</td>
               <td>4</td>
               <td>Trilok Panth</td>
-              <td></td>
             </tr>
             <tr>
               <td>Image Processing</td>
               <td>4</td>
               <td>Trilok Panth</td>
-              <td></td>
             </tr>
             <tr>
               <td>Image Processing</td>
               <td>4</td>
               <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
             </tr>
           </tbody>
         </table>
-
-        <!-- Button to submit Courses -->
-        <div class="button-div">
-          <button class="submit-courses">Submit</button>
-        </div>
       </div>
     </section>
-
-    <!-- Footer -->
     <footer>
       <div class="footer">
         <p>Copyrights &copy;Duke University</p>
