@@ -2,27 +2,42 @@
   margin: 0px;
   /* font-size: 1.1rem !important; */
   padding: 0px;
-  font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.1rem "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* text-shadow: 3px 6px 2px rgba(0, 0, 0, .3); */
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+a {
+  color: rgba(255, 255, 255, 0.683);
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  color: red;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select {
   background-color: #223243;
-  color: wheat;
-  width: 90%;
-  height: 90vh;
-  /* box-sizing: border-box; */
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 42px;
-  background: #1d2b3a;
-  /* box-shadow: 9px 9px 1px #0c1117, -9px -9px 1px #2e455d; */
-  box-shadow: 2px -6px 26px 16px rgba(60, 74, 29, 0.83);
-  padding: 30px;
-  padding-top: 0px;
-  /* change me to revert colors */
+  border: none;
+  outline: none;
+  padding: 8px;
+  padding-right: 10px;
+  border-radius: 0.5rem;
+  color: rgb(187, 165, 125);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
   background-image: linear-gradient(
     to right bottom,
     #202710,
@@ -31,126 +46,188 @@ body {
     #0d323c,
     #223243
   );
+  background-image: linear-gradient(to right bottom, #6061c0, #5552a8, #494490, #3d377a, #312a64);
+  background-image: linear-gradient(to right bottom, #334855, #25435c, #1e3d61, #233565, #312a64);
+  /* background-image: linear-gradient(to right bottom, #50459d, #524897, #544b90, #554d8a, #575083); */
+
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 100%;
+  /* change me to revert colors */
+  padding: 20px;
+  padding-left: 40px;
+}
+
+/* font styling */
+body p,
+body td,
+input,select {
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Roboto Mono", monospace;
+  word-spacing: 0.3rem;
+  letter-spacing: 0.05rem;
+}
+
+body th {
+  font-size: large;
+  font-weight: bolder;
+  word-spacing: 0.3rem;
+  letter-spacing: 0.1rem;
+}
+
+body h1 {
+  font-family: "Shantell Sans", cursive;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.header-user span {
+  font-family: "Shantell Sans", cursive;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
 h1 {
   font-size: 1.5rem;
 }
 
 /* ---------------------------------------------------------------------------Header--------------------------------------------------------------------------- */
 
+.logo {
+  width: 90px;
+  height: 90px;
+  border: 3px solid blue;
+  border-radius: 50%;
+}
+
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-right: 20px;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+}
+
+.header-image {
+  flex: 1;
 }
 
 .header-items {
   display: flex;
   align-items: center;
   gap: 20px;
-  text-decoration: underline;
+  flex: 1;
+  /* text-decoration: underline; */
 }
 
 .header-user {
   display: flex;
   gap: 20px;
   margin: 10px;
+  flex: 1;
+  justify-content: space-around;
   /* position: relative; */
 }
 
-.profile-options {
-  display: none;
-}
-
-.profile-options li {
-  font-size: 0.9rem;
-  margin: 7px 0px;
-}
-
-.header-user-name:hover .profile-options {
-  display: block;
-  position: absolute;
-}
-
-.profile-options li:hover {
-  color: red;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.profile-options a {
-  color: inherit;
-  text-decoration: none;
-  font: inherit;
-}
-
-/* -----------------------------------------------------------------------Sem Select--------------------------------------------------------------------------- */
-
-.sem-selector {
+.user-icon-and-name {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
+  align-items: flex-start;
+  /* padding-bottom: 5px; */
+}
+
+.profile-options {
+  display: flex;
+  gap: 30px;
+  color: rgb(162, 162, 127);
 }
 
 /* colors are not getting applied for options */
 
 /* .sem-selector span {            
-      color: wheat;
+      color: white;
       border: 4px solid red;
   } */
-/* ---------------------------------------------------------------------------TABLE--------------------------------------------------------------------------- */
 
-.courses-table {
-  width: 90vw;
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
+/* ---------------------------------------------------------------------------Sem Selection and SearchBar--------------------------------------------------------------------------- */
+.course-table-selection-and-searchbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.courses-table thead tr {
-  background-color: grey;
-  color: wheat;
-  text-align: left;
-  font-weight: bold;
+.sem-selector {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding-block: 30px;
+  justify-content: center;
 }
 
-.courses-table th {
-  /* change me to revert colors */
-  background-color: #3c4a1d;
+.table-searchbar {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
 }
 
-.courses-table th,
-.courses-table td {
-  padding: 12px 16px;
+.table-searchbar input {
+  padding: 10px;
+  border-radius: 1rem;
+  padding-left: 40px;
+  background-color: #223243;
+  color: white;
+  border: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  outline: none;
 }
 
-.courses-table tbody tr {
-  border-bottom: 10px solid red;
+.search-bar-icon {
+  position: relative;
+  left: 30px;
 }
 
-.courses-table tbody tr:nth-child(even) {
-  background-color: rgb(34, 50, 67, 0.9);
+/* ---------------------------------------------------------------------------Course boxes--------------------------------------------------------------------------- */
+
+.courses-boxes-section {
+  width: 100%;
+  padding: 20px;
+  overflow-y: scroll;
+  margin-bottom: 30px;
 }
 
-.courses-table tbody tr:nth-child(odd) {
-  background-color: rgb(34, 50, 67, 0.5);
+.course-items {
+  display: grid;
+  gap: 30px;
+  width: 100%;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-around;
+  overflow-y: scroll;
 }
 
-.courses-table tr:hover {
-  background-color: #0d243c !important;
+.course-item {
+  height: 300px;
+  width: 350px;
+  background-color: #223243;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /* box-shadow: -1px 0px 28px 9px rgba(0,0,0,0.75); */
 }
 
-table {
-  width: 90vw;
+.course-item p {
+  gap: 10px;
 }
 
-section{
-    margin-top: auto;
-    margin-bottom: auto;
+.course-item:hover {
+  box-shadow: -1px 0px 28px 9px rgba(0, 0, 0, 0.75);
+  width: 360px;
+  cursor: pointer;
 }
 
 /* --------------------------------------------------------------------------- Footer ---------------------------------------------------------------- */
@@ -159,6 +236,7 @@ footer {
   /* border: 4px solid red; */
   margin-top: auto;
   display: flex;
+  padding-bottom: 20px;
 }
 
 .footer {

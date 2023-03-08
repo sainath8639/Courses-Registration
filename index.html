@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Regestration</title>
+    <title>Course Registration</title>
 
+    <!-- FONT AWSOME CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -13,151 +14,122 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <!-- ROBOTO MONO FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
   </head>
+
   <body>
-    <header>
-      <div class="header">
-        <!-- Header image -->
-        <div class="header-image">
-          <img src="./images/logo.png" width="100px" height="100px" alt="" />
-        </div>
-        <!-- Header Items -->
-        <div class="header-items">
-          <div class="header-items-icon">
-            <i class="fa-solid fa-book"></i>
+    <div class="wrapper">
+      <nav>
+        <div class="header">
+          <!-- Header image -->
+          <div class="header-image">
+            <a href="../index.html"
+              ><img
+                class="logo"
+                src="../images/logo.png"
+                width="100px"
+                height="100px"
+                alt=""
+            /></a>
           </div>
-          <div class="header-items-name">
-            <h1>Course Regestration</h1>
+          <!-- Header Items -->
+          <div class="header-items">
+            <div class="header-items-icon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div class="header-items-name">
+              <h1>Course Registration</h1>
+            </div>
           </div>
-        </div>
-        <!-- Header User -->
-        <div class="header-user">
-          <div class="header-user-icon"><i class="fa-regular fa-user"></i></div>
-          <div class="header-user-name">
-            <span>Sainath</span>
-            <i
-              style="display: inline-block"
-              class="fa-sharp fa-solid fa-caret-down"
-            ></i>
-            <!-- Profile and Options -->
+
+          <!-- Header User -->
+          <div class="header-user">
             <div class="profile-options">
-              <ul>
-                <li><a href="./pages/myCourses.html">My Courses </a></li>
-                <!-- <li><a href="./">Register Courses</a></li> -->
-                <li><a href="./pages/admin.html"> Admin </a></li>
-              </ul>
+              <a href="./pages/myCourses.html">My Courses </a>
+              <a href="./pages/admin.html"> Admin </a>
+            </div>
+
+            <div class="user-icon-and-name">
+              <div class="header-user-icon">
+                <i class="fa-regular fa-user"></i>
+              </div>
+              <div class="header-user-name">
+                <span>Sainath</span>
+                <i style="display: inline-block"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </nav>
 
-    <section>
-      <!-- Sem Selector -->
-      <div class="sem-selector">
-        <p>Please select the semester to select the courses</p>
-        <div class="semester">
-          <!-- <div class="dropdown">
-        <p>Select the semester by clicking on the below button</p>
-        <button style="display: inline-block">
-          Choose sem
-          <i
-            style="display: inline-block"
-            class="fa-sharp fa-solid fa-caret-down"
-          ></i>
-        </button>
-        <ul>
-          <li>1st sem</li>
-          <li>2nd sem</li>
-          <li>3rd sem</li>
-        </ul>
-      </div> -->
-
-          <select name="semester" id="">
-            <option value="sem1"><span> 1st sem</span></option>
-            <option value="sem2"><span> 2nd sem</span></option>
-            <option value="sem3"><span> 3rd sem</span></option>
-          </select>
+      <section class="sem-select-and-search">
+        <!-- Sem Selector -->
+        <div class="sem-selector">
+          <p>Please select the semester to select the courses</p>
+          <div class="semester">
+            <select name="semester" id="">
+              <option value="sem1"><span> None</span></option>
+              <option value="sem1"><span> 1st sem</span></option>
+              <option value="sem2"><span> 2nd sem</span></option>
+              <option value="sem3"><span> 3rd sem</span></option>
+            </select>
+          </div>
         </div>
-      </div>
+
+        <div class="search-bar-items">
+          <div class="search-bar-icon">
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="search-bar-input">
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+      </section>
 
       <!-- Table of courses -->
-      <div class="courses-table">
-        <table>
-          <thead>
-            <tr>
-              <th>CourseName</th>
-              <th>Credits</th>
-              <th>Proffessor</th>
-              <th>Enroll (Yes/No)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Image Processing</td>
-              <td>4</td>
-              <td>Trilok Panth</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Button to submit Courses -->
+      <section class="section-course-table">
+        <div class="courses-table">
+          <table>
+            <thead>
+              <tr>
+                <th>CourseName</th>
+                <th>Credits</th>
+                <th>Professor</th>
+                <th>Limit</th>
+                <th>Eligibility</th>
+                <th>Enroll (Yes/No)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Image Processing</td>
+                <td>4</td>
+                <td>Trilok Panth</td>
+                <td>50</td>
+                <td>CSE</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="button-div">
           <button class="submit-courses">Submit</button>
         </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer">
-        <p>Copyrights &copy;Duke University</p>
-      </div>
-    </footer>
+      </section>
+      <!-- Footer -->
+      <footer>
+        <div class="footer">
+          <p>Copyrights &copy;Duke University</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

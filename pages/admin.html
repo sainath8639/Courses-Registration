@@ -1,61 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+
+    <!-- FONTAWSOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ROBOTO MONO FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet" />
+
     <title>Admin</title>
     <link rel="stylesheet" href="../styles/admin.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header">
-        <!-- Header image -->
-        <div class="header-image">
-          <img src="../images/logo.png" width="100px" height="100px" alt="" />
-        </div>
-        <!-- Header Items -->
-        <div class="header-items">
-          <div class="header-items-icon">
-            <i class="fa-duotone fa-user-plus"></i>
-          </div>
-          <div class="header-items-name">
-            <h1>Admin</h1>
-          </div>
-        </div>
-        <!-- Header User -->
-        <div class="header-user">
-          <div class="header-user-icon"><i class="fa-regular fa-user"></i></div>
-          <div class="header-user-name">
-            <span>Sainath</span>
-            <i
-              style="display: inline-block"
-              class="fa-sharp fa-solid fa-caret-down"
-            ></i>
-            <!-- Profile and Options -->
-            <div class="profile-options">
-              <ul>
-                <li><a href="../index.html">Home </a></li>
-              </ul>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header">
+                <!-- Header image -->
+                <div class="header-image">
+                    <a href="./myCourses.html"><img class="logo" src="../images/logo.png" width="100px" height="100px"
+                        alt="" /></a>
+                </div>
+                <!-- Header Items -->
+                <div class="header-items">
+                    <div class="header-items-icon">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div class="header-items-name">
+                        <h1>Admin</h1>
+                    </div>
+                </div>
+
+                <!-- Header User -->
+                <div class="header-user">
+                    <div class="profile-options">
+                        <a href="../index.html"> Home </a>
+                    </div>
+
+                    <div class="user-icon-and-name">
+                        <div class="header-user-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="header-user-name">
+                            <span>Sainath</span>
+                            <i style="display: inline-block"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </header>
+
+        <div class="adding-courses-and-displaying-table">
+            <section class="section-for-adding-courses">
+                <p>Add Course</p>
+                <br />
+                <div class="add-courses">
+                    <form class="courses-form">
+                        <input type="text" placeholder="Enter Course Name" />
+                        <input type="number" placeholder="Enter Credits" />
+                        <input type="text" placeholder="Enter Professor" />
+                        <input type="number" placeholder="Enter Limit" />
+                        <input type="text" placeholder="Enter Eligibility" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="section-course-table">
+                <div class="course-table-heading-and-searchbar">
+
+                    <div class="table-heading">
+                        <p>All Courses</p>
+                    </div>
+
+                    <div class="table-searchbar">
+                        <div class="search-bar-icon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="search-bar-input">
+                            <input type="text" placeholder="Search..." />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="courses-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CourseName</th>
+                                <th>Credits</th>
+                                <th>Professor</th>
+                                <th>Limit</th>
+                                <th>Eligibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                            <tr>
+                                <td>Image Processing</td>
+                                <td>4</td>
+                                <td>Trilok Panth</td>
+                                <td>50</td>
+                                <td>CSE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-      </div>
-    </header>
 
-    
+        <footer>
+            <div class="footer">
+                <p>Copyrights &copy;Duke University</p>
+            </div>
+        </footer>
+    </div>
+</body>
 
-    <footer>
-      <div class="footer">
-        <p>Copyrights &copy;Duke University</p>
-      </div>
-    </footer>
-  </body>
 </html>
