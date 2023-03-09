@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=7.0" />
 
     <!-- FONT AWSOME CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -24,16 +24,16 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="header">
+    <div class="wrapper flex">
+        <nav>
+            <div class="header flex">
                 <!-- Header image -->
                 <div class="header-image">
                     <a href="../index.html"><img class="logo" src="../images/logo.png" width="100px" height="100px"
                             alt="" /></a>
                 </div>
                 <!-- Header Items -->
-                <div class="header-items">
+                <div class="header-items flex">
                     <div class="header-items-icon">
                         <i class="fa-solid fa-book"></i>
                     </div>
@@ -43,13 +43,13 @@
                 </div>
 
                 <!-- Header User -->
-                <div class="header-user">
-                    <div class="profile-options">
+                <div class="header-user flex">
+                    <div class="profile-options flex">
                         <a href="../index.html">Register Courses </a>
                         <a href="./admin.html"> Admin </a>
                     </div>
 
-                    <div class="user-icon-and-name">
+                    <div class="user-icon-and-name flex">
                         <div class="header-user-icon">
                             <i class="fa-regular fa-user"></i>
                         </div>
@@ -60,28 +60,34 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </nav>
 
-        <section class="sem-select-and-search">
+        <section class="sem-select-and-search flex">
 
             <!-- Sem Selector -->
-            <form action="" class="sem-selector-form">
-                <div class="sem-selector">
-                    <p>Please select the semester to see the registered courses</p>
+            <form action="" class="sem-selector-form flex">
+                <div class="sem-selector flex">
+                    <div class="sem-selector-text">
+                        <p>Please select the semester to see the registered courses</p>
+                    </div>
                     <div class="semester">
                         <select name="semester" id="">
                             <option value="All"><span>All</span></option>
                             <option value="1"><span> 1st sem</span></option>
                             <option value="2"><span> 2nd sem</span></option>
                             <option value="3"><span> 3rd sem</span></option>
+                            <option value="3"><span> 4th sem</span></option>
+                            <option value="3"><span> 5th sem</span></option>
                             <option value="6"><span> 6th sem</span></option>
+                            <option value="3"><span> 7th sem</span></option>
+                            <option value="3"><span> 8th sem</span></option>
                         </select>
                     </div>
                 </div>
                 <button type="submit">Submit</button>
             </form>
 
-            <div class="table-searchbar">
+            <div class="table-searchbar flex">
                 <div class="search-bar-icon">
                     <i class="fa fa-search"></i>
                 </div>
@@ -94,7 +100,7 @@
         <section class="courses-boxes-section">
             <div class="course-items" id="course-items">
                 <!-- Course credits Professor  Sample Course Structure-->
-                <!-- <div class="course-item item-0">
+                <!-- <div class="course-item ">
                     <p>Course: Image Processing</p>
                     <p>Credits: 4</p>
                     <p>Professor: Trilok Panth</p>
@@ -102,7 +108,7 @@
             </div>
         </section>
 
-        <footer>
+        <footer class="flex">
             <div class="footer">
                 <p>Copyrights &copy;Duke University</p>
             </div>

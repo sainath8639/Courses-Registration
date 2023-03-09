@@ -4,11 +4,11 @@ import { getCoursesBySemester, isSemAlreadyEnrolled, getRegisterCoursesMatchedRe
 function checkSelectedSemAtRefresh() {
 
     let selectedSem = getRegisterSem();
-    console.log(selectedSem);
+    // console.log(selectedSem);
 
     if (selectedSem == "None") {
         // make the data null
-        console.log("Already Enrolled");
+        // console.log("Already Enrolled");
         return;
     }
 
@@ -37,7 +37,7 @@ semSelectForm.addEventListener("submit", function (event) {
     //   console.log('val is :  ' + val)
 
     if (isSemAlreadyEnrolled(val) == true) {
-        console.log("fasfd")
+        // console.log("fasfd")
         alert(
             "You had already enrolled in this semester, Please Select a new semester"
         );
@@ -46,7 +46,7 @@ semSelectForm.addEventListener("submit", function (event) {
 
     let semCourses = getCoursesBySemester(val);
     // add each course to the body
-    console.log(semCourses);
+    // console.log(semCourses);
 
     semCourses.forEach((course) => {
         let courseTableRow = document.createElement("tr");
@@ -99,13 +99,10 @@ searchFilterInput.addEventListener("input", e => createHtmlElement(e));
 
 function createHtmlElement(event) {
     event.preventDefault();
-    console.log("called")
     let val = event.target.value;
-    console.log("val is : ");
-    console.log(val)
     let inputSelectedCourses = getRegisterCoursesMatchedResultsForInput(val);
-    console.log("Res is :  ");
-    console.log(inputSelectedCourses);
+    // console.log("Res is :  ");
+    // console.log(inputSelectedCourses);
 
 
     // set Items to table 
@@ -159,14 +156,12 @@ submitFormCourses.addEventListener("submit", function (event) {
     let tr1 = tbody.querySelectorAll('tr')[0]
     let select = tr1.querySelector('select')
     let opt = select.querySelector('option')
-    console.log(select.value);
 
     let trs = tbody.querySelectorAll('tr');
 
     trs.forEach(tr=>{
 
         if(tr.querySelector('select').value == 'yes'){
-            console.log("successfully selected");
             let tds = tr.querySelectorAll('td');
 
             // CourseName	Credits	Professor	Limit	Eligibility	Enroll (Yes/No)

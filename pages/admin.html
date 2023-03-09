@@ -19,21 +19,21 @@
     <title>Admin</title>
     <link rel="stylesheet" href="../styles/admin.css" />
     <!-- <script defer src="../js/admin.js" type="module"></script> -->
-    <script defer type="module" src="../js/admin.js"></script>    
+    <script defer type="module" src="../js/admin.js"></script>
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="header">
+    <div class="wrapper flex">
+        <nav>
+            <div class="header flex">
                 <!-- Header image -->
                 <div class="header-image">
                     <a href="./myCourses.html"><img class="logo" src="../images/logo.png" width="100px" height="100px"
                             alt="" /></a>
                 </div>
                 <!-- Header Items -->
-                <div class="header-items">
+                <div class="header-items flex">
                     <div class="header-items-icon">
                         <i class="fa-solid fa-book"></i>
                     </div>
@@ -43,12 +43,12 @@
                 </div>
 
                 <!-- Header User -->
-                <div class="header-user">
-                    <div class="profile-options">
+                <div class="header-user flex">
+                    <div class="profile-options flex">
                         <a href="../index.html"> Home </a>
                     </div>
 
-                    <div class="user-icon-and-name">
+                    <div class="user-icon-and-name flex">
                         <div class="header-user-icon">
                             <i class="fa-regular fa-user"></i>
                         </div>
@@ -59,14 +59,14 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </nav>
 
-        <div class="adding-courses-and-displaying-table">
-            <section class="section-for-adding-courses">
+        <div class="adding-courses-and-displaying-table  flex">
+            <section class="section-for-adding-courses flex">
                 <p>Add Course</p>
                 <br />
                 <div class="add-courses">
-                    <form class="courses-form" id="courses-form">
+                    <form class="courses-form flex" id="courses-form">
                         <input required name="courseName" type="text" placeholder="Enter Course Name" />
                         <input required name="credits" type="number" placeholder="Enter Credits" />
                         <input required name="professor" type="text" placeholder="Enter Professor" />
@@ -78,24 +78,23 @@
                 </div>
             </section>
 
-            <section class="section-course-table">
-                <div class="course-table-heading-and-searchbar">
-                    <div class="table-heading">
+            <section class="section-course-table flex">
+                <div class="course-table-heading-and-searchbar flex">
+                    <div class="table-heading flex">
                         <p>All Courses</p>
                     </div>
 
-                    <div class="table-searchbar">
+                    <div class="table-searchbar flex">
                         <div class="search-bar-icon">
                             <i class="fa fa-search"></i>
                         </div>
-                        <div class="search-bar-input">
-                            <input id="searchbar-filter-input" type="text" placeholder="Search..."
-                                oninput />
+                        <div class="search-bar-input flex">
+                            <input id="searchbar-filter-input" type="text" placeholder="Search..." oninput />
                         </div>
                     </div>
                 </div>
 
-                <div class="courses-table">
+                <div class="courses-table flex">
                     <table>
                         <thead>
                             <tr>
@@ -108,156 +107,27 @@
                             </tr>
                         </thead>
                         <tbody id="courses-table-body">
-                            <tr>
+                            <!-- <tr>
                                 <td>Image Processing</td>
                                 <td>4</td>
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
                                 <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>Image Processing</td>
-                                <td>4</td>
-                                <td>Trilok Panth</td>
-                                <td>50</td>
-                                <td>CSE</td>
-                                <td>1</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
             </section>
         </div>
 
-        <footer>
+        <footer class="flex">
             <div class="footer">
                 <p>Copyrights &copy;Duke University</p>
             </div>
         </footer>
     </div>
 
-    
 </body>
 
 </html>

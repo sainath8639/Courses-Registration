@@ -7,13 +7,14 @@ import {
 function loadMyCoursesFromLocalStorage() {
   let courses = JSON.parse(localStorage.getItem("myCourses"));
   // console.log("courses are ");
-  console.log(courses);
+  // console.log(courses);
 
   let coursesDiv = document.querySelector("#course-items");
   coursesDiv.innerHTML = "";
   courses.forEach((course) => {
     let courseDiv = document.createElement("div");
     courseDiv.classList.add("course-item");
+
     courseDiv.innerHTML = `
     <p>Course: ${course.courseName}</p>
     <p>Credits: ${course.credits}</p>
@@ -45,8 +46,8 @@ semSelectForm.addEventListener("submit", function (event) {
   setCurrSem(val);
 
   let semCourses = getSelectedCoursesBySemester(val);
-  console.log("Res is  ");
-  console.log(semCourses);
+  // console.log("Res is  ");
+  // console.log(semCourses);
 
   let coursesDiv = document.querySelector("#course-items");
   coursesDiv.innerHTML = "";
@@ -73,8 +74,8 @@ searchFilterInput.addEventListener("input", function (event) {
   // also I have to filter my current selected sem 
   let inputSelectedCourses = getMyCoursesMatchedResultsForInput(val);
 
-  console.log("Res is :  ");
-  console.log(inputSelectedCourses);
+  // console.log("Res is :  ");
+  // console.log(inputSelectedCourses);
 
   let coursesDiv = document.querySelector("#course-items");
   coursesDiv.innerHTML = "";

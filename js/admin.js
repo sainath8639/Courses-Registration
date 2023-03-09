@@ -43,7 +43,6 @@ let form = document.querySelector("#courses-form");
 
 form.addEventListener("submit", function (event) {
   // extract form input fields from the event object
-  console.log(event.target.courseName.value);
 
   let courseName = event.target.courseName.value;
 
@@ -68,8 +67,8 @@ form.addEventListener("submit", function (event) {
   let allCourses = loadObjectFromLocalStorage(key);
 
   allCourses.push(course);
-  console.log("here are updated courses");
-  console.log(allCourses);
+  // console.log("here are updated courses");
+  // console.log(allCourses);
   storeObjectInLocalStorage(allCourses, key);
   loadAllCoursesFromLocalStorage();
 });
@@ -83,8 +82,8 @@ searchFilterInput.addEventListener("input", function (event) {
 
   let inputSelectedCourses = getMatchedResultsForInput(val);
 
-  console.log("res courses are");
-  console.log(inputSelectedCourses);
+  // console.log("res courses are");
+  // console.log(inputSelectedCourses);
 
   let coursesTableBody = document.querySelector("#courses-table-body");
   coursesTableBody.innerHTML = "";

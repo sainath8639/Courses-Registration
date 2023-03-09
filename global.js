@@ -146,7 +146,7 @@ export function isSemAlreadyEnrolled(semester) {
       selected = true;
     }
   });
-  console.log("val is : " + selected);
+  // console.log("val is : " + selected);
   return selected;
 }
 
@@ -159,10 +159,10 @@ export function getSelectedCoursesBySemester(semester) {
 }
 
 export function getRegisterCoursesMatchedResultsForInput(val) {
-  console.log("regester sem is :" + getRegisterSem());
+  // console.log("regester sem is :" + getRegisterSem());
   let coursesForSemester = getCoursesBySemester(getRegisterSem());
-  console.log("courses for this sem is :  ");
-  console.log(coursesForSemester);
+  // console.log("courses for this sem is :  ");
+  // console.log(coursesForSemester);
 
   // if this sem is already registered then return null
   if (isSemAlreadyEnrolled(getRegisterSem())) {
@@ -243,8 +243,8 @@ let myCourses = [
 
 export function addCoursesInMyCourses(extraCourses){
 
-  console.log("adding")
-  console.log(extraCourses);
+  // console.log("adding")
+  // console.log(extraCourses);
   let myCourses = loadObjectFromLocalStorage("myCourses"); 
   extraCourses.forEach(course=>{
     myCourses.push(course);
@@ -275,8 +275,8 @@ export function getMyCoursesMatchedResultsForInput(val) {
   // also I have to filter my current selected sem
   let myCourses = getSelectedCoursesBySemester(getCurrentSem());
 
-  console.log("all local storage mycourses are ");
-  console.log(myCourses);
+  // console.log("all local storage mycourses are ");
+  // console.log(myCourses);
 
   return myCourses.filter((course) => {
     if (course.courseName.toLowerCase().includes(val.toLowerCase()))
