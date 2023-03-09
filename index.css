@@ -170,11 +170,15 @@ h1 {
 
 .sem-select-and-search {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
+.sem-selector-form{
+  display: flex;
+  justify-content: center;
+}
 .sem-selector {
-  flex: 1;
   /* align-self: flex-start; */
   display: flex;
   gap: 20px;
@@ -183,7 +187,6 @@ h1 {
 }
 
 .search-bar-items {
-  flex: 0.3;
   /* border: 2px solid red; */
   display: flex;
   gap: 20px;

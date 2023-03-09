@@ -18,6 +18,9 @@
 
     <title>Admin</title>
     <link rel="stylesheet" href="../styles/admin.css" />
+    <!-- <script defer src="../js/admin.js" type="module"></script> -->
+    <script defer type="module" src="../js/admin.js"></script>    
+
 </head>
 
 <body>
@@ -27,7 +30,7 @@
                 <!-- Header image -->
                 <div class="header-image">
                     <a href="./myCourses.html"><img class="logo" src="../images/logo.png" width="100px" height="100px"
-                        alt="" /></a>
+                            alt="" /></a>
                 </div>
                 <!-- Header Items -->
                 <div class="header-items">
@@ -63,12 +66,13 @@
                 <p>Add Course</p>
                 <br />
                 <div class="add-courses">
-                    <form class="courses-form">
-                        <input type="text" placeholder="Enter Course Name" />
-                        <input type="number" placeholder="Enter Credits" />
-                        <input type="text" placeholder="Enter Professor" />
-                        <input type="number" placeholder="Enter Limit" />
-                        <input type="text" placeholder="Enter Eligibility" />
+                    <form class="courses-form" id="courses-form">
+                        <input required name="courseName" type="text" placeholder="Enter Course Name" />
+                        <input required name="credits" type="number" placeholder="Enter Credits" />
+                        <input required name="professor" type="text" placeholder="Enter Professor" />
+                        <input required name="limit" type="number" placeholder="Enter Limit" />
+                        <input required name="eligibility" type="text" placeholder="Enter Eligibility" />
+                        <input required name="sem" type="text" placeholder="Enter Sem" />
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -76,7 +80,6 @@
 
             <section class="section-course-table">
                 <div class="course-table-heading-and-searchbar">
-
                     <div class="table-heading">
                         <p>All Courses</p>
                     </div>
@@ -86,10 +89,10 @@
                             <i class="fa fa-search"></i>
                         </div>
                         <div class="search-bar-input">
-                            <input type="text" placeholder="Search..." />
+                            <input id="searchbar-filter-input" type="text" placeholder="Search..."
+                                oninput />
                         </div>
                     </div>
-
                 </div>
 
                 <div class="courses-table">
@@ -101,15 +104,17 @@
                                 <th>Professor</th>
                                 <th>Limit</th>
                                 <th>Eligibility</th>
+                                <th>Sem</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="courses-table-body">
                             <tr>
                                 <td>Image Processing</td>
                                 <td>4</td>
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -117,6 +122,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -124,6 +130,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -131,6 +138,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -138,6 +146,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -145,6 +154,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -152,6 +162,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -159,6 +170,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -166,6 +178,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -173,6 +186,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -180,6 +194,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -187,6 +202,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -194,6 +210,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -201,6 +218,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -208,6 +226,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -215,6 +234,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                             <tr>
                                 <td>Image Processing</td>
@@ -222,6 +242,7 @@
                                 <td>Trilok Panth</td>
                                 <td>50</td>
                                 <td>CSE</td>
+                                <td>1</td>
                             </tr>
                         </tbody>
                     </table>
@@ -235,6 +256,8 @@
             </div>
         </footer>
     </div>
+
+    
 </body>
 
 </html>

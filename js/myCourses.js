@@ -1,39 +1,92 @@
+import {
+  getSelectedCoursesBySemester,
+  getMyCoursesMatchedResultsForInput,
+  setCurrSem
+} from "../global.js";
 // Loading data from Local Storage to the courses table
 function loadMyCoursesFromLocalStorage() {
-    let courses = JSON.parse(localStorage.getItem("myCourses"));
+  let courses = JSON.parse(localStorage.getItem("myCourses"));
+  // console.log("courses are ");
+  console.log(courses);
 
-    console.log("courses are ");
-    console.log(courses);
+  let coursesDiv = document.querySelector("#course-items");
+  coursesDiv.innerHTML = "";
+  courses.forEach((course) => {
+    let courseDiv = document.createElement("div");
+    courseDiv.classList.add("course-item");
+    courseDiv.innerHTML = `
+    <p>Course: ${course.courseName}</p>
+    <p>Credits: ${course.credits}</p>
+    <p>Professor: ${course.professor}</p>
+    <p>Sem: ${course.sem}</p>`;
 
-    let courseItemsDiv = document.querySelector("#course-items");
-
-    if (!courseItemsDiv) {
-        courseItemsDiv = document.createElement("course-items");
-        console.log("no div found");
-    }
-
-
-    // create a child div for each coruse add a div 'course-item' to the this div
-
-    courses.forEach((course) => {
-        let courseItemDiv = document.createElement("div");
-        courseItemDiv.className = "course-item";
-
-        let p1 = document.createElement("p");
-        p1.innerHTML = `Course: ${course.courseName}`;
-        let p2 = document.createElement("p");
-        p2.innerHTML = `Credits: ${course.credits}`;
-        let p3 = document.createElement("p");
-        p3.innerHTML = `Professor: ${course.professor}`;
-        let p4 = document.createElement("p");
-        p4.innerHTML = `Sem: ${course.sem}`;
-
-        courseItemDiv.appendChild(p1);
-        courseItemDiv.appendChild(p2);
-        courseItemDiv.appendChild(p3);
-        courseItemDiv.appendChild(p4);
-        courseItemsDiv.appendChild(courseItemDiv);
-    });
+    coursesDiv.appendChild(courseDiv);
+  });
 }
 
+/*
+
+<div class="course-item item-0">
+    <p>Course: Image Processing</p>
+    <p>Credits: 4</p>
+    <p>Professor: Trilok Panth</p>
+    <p>Sem: 1</p>
+</div> 
+*/
+
 loadMyCoursesFromLocalStorage();
+
+let semSelectForm = document.querySelector(".sem-selector-form");
+
+semSelectForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let val = semSelectForm.elements["semester"].value;
+
+  setCurrSem(val);
+
+  let semCourses = getSelectedCoursesBySemester(val);
+  console.log("Res is  ");
+  console.log(semCourses);
+
+  let coursesDiv = document.querySelector("#course-items");
+  coursesDiv.innerHTML = "";
+  semCourses.forEach((course) => {
+    let courseDiv = document.createElement("div");
+    courseDiv.classList.add("course-item");
+    courseDiv.innerHTML = `
+    <p>Course: ${course.courseName}</p>
+    <p>Credits: ${course.credits}</p>
+    <p>Professor: ${course.professor}</p>
+    <p>Sem: ${course.sem}</p>`;
+
+    coursesDiv.appendChild(courseDiv);
+  });
+});
+
+let searchFilterInput = document.querySelector("#searchbar-filter-input");
+
+searchFilterInput.addEventListener("input", function (event) {
+  event.preventDefault();
+
+  let val = event.target.value;
+
+  // also I have to filter my current selected sem 
+  let inputSelectedCourses = getMyCoursesMatchedResultsForInput(val);
+
+  console.log("Res is :  ");
+  console.log(inputSelectedCourses);
+
+  let coursesDiv = document.querySelector("#course-items");
+  coursesDiv.innerHTML = "";
+  inputSelectedCourses.forEach((course) => {
+    let courseDiv = document.createElement("div");
+    courseDiv.classList.add("course-item");
+    courseDiv.innerHTML = `
+    <p>Course: ${course.courseName}</p>
+    <p>Credits: ${course.credits}</p>
+    <p>Professor: ${course.professor}</p>
+    <p>Sem: ${course.sem}</p>`;
+
+    coursesDiv.appendChild(courseDiv);
+  });
+});

@@ -19,8 +19,8 @@
     <title>My Courses</title>
     <link rel="stylesheet" href="../styles/myCourses.css" />
 
-    <script defer src="../js/myCourses.js"></script>
-    
+    <script defer src="../js/myCourses.js" type="module"></script>
+
 </head>
 
 <body>
@@ -62,33 +62,33 @@
             </div>
         </header>
 
-        <section class="section-courses-boxes">
+        <section class="sem-select-and-search">
 
-            <div class="course-table-selection-and-searchbar">
-                <!-- Sem Selector -->
+            <!-- Sem Selector -->
+            <form action="" class="sem-selector-form">
                 <div class="sem-selector">
                     <p>Please select the semester to see the registered courses</p>
                     <div class="semester">
                         <select name="semester" id="">
-                            <option value="all"><span>All</span></option>
-                            <option value="sem1"><span> 1st sem</span></option>
-                            <option value="sem2"><span> 2nd sem</span></option>
-                            <option value="sem3"><span> 3rd sem</span></option>
+                            <option value="All"><span>All</span></option>
+                            <option value="1"><span> 1st sem</span></option>
+                            <option value="2"><span> 2nd sem</span></option>
+                            <option value="3"><span> 3rd sem</span></option>
+                            <option value="6"><span> 6th sem</span></option>
                         </select>
                     </div>
                 </div>
+                <button type="submit">Submit</button>
+            </form>
 
-                <div class="table-searchbar">
-                    <div class="search-bar-icon">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div class="search-bar-input">
-                        <input type="text" placeholder="Search..." />
-                    </div>
+            <div class="table-searchbar">
+                <div class="search-bar-icon">
+                    <i class="fa fa-search"></i>
                 </div>
-
+                <div class="search-bar-input">
+                    <input id="searchbar-filter-input" type="text" placeholder="Search..." />
+                </div>
             </div>
-        
         </section>
 
         <section class="courses-boxes-section">

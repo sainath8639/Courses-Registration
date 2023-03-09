@@ -1,100 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course Registration</title>
 
-    <!-- FONT AWSOME CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- ROBOTO MONO FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.css" />
-    <script defer src="./index.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Registration</title>
 
-  <body>
-    <div class="wrapper">
-      <nav>
-        <div class="header">
-          <!-- Header image -->
-          <div class="header-image">
-            <a href="../index.html"
-              ><img
-                class="logo"
-                src="../images/logo.png"
-                width="100px"
-                height="100px"
-                alt=""
-            /></a>
+  <!-- FONT AWSOME CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- ROBOTO MONO FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+  <script defer src="./index.js" type="module"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav>
+      <div class="header">
+        <!-- Header image -->
+        <div class="header-image">
+          <a href="../index.html"><img class="logo" src="../images/logo.png" width="100px" height="100px" alt="" /></a>
+        </div>
+        <!-- Header Items -->
+        <div class="header-items">
+          <div class="header-items-icon">
+            <i class="fa-solid fa-book"></i>
           </div>
-          <!-- Header Items -->
-          <div class="header-items">
-            <div class="header-items-icon">
-              <i class="fa-solid fa-book"></i>
-            </div>
-            <div class="header-items-name">
-              <h1>Course Registration</h1>
-            </div>
+          <div class="header-items-name">
+            <h1>Course Registration</h1>
+          </div>
+        </div>
+
+        <!-- Header User -->
+        <div class="header-user">
+          <div class="profile-options">
+            <a href="./pages/myCourses.html">My Courses </a>
+            <a href="./pages/admin.html"> Admin </a>
           </div>
 
-          <!-- Header User -->
-          <div class="header-user">
-            <div class="profile-options">
-              <a href="./pages/myCourses.html">My Courses </a>
-              <a href="./pages/admin.html"> Admin </a>
+          <div class="user-icon-and-name">
+            <div class="header-user-icon">
+              <i class="fa-regular fa-user"></i>
             </div>
-
-            <div class="user-icon-and-name">
-              <div class="header-user-icon">
-                <i class="fa-regular fa-user"></i>
-              </div>
-              <div class="header-user-name">
-                <span>Sainath</span>
-                <i style="display: inline-block"></i>
-              </div>
+            <div class="header-user-name">
+              <span>Sainath</span>
+              <i style="display: inline-block"></i>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <section class="sem-select-and-search">
-        <!-- Sem Selector -->
+    <section class="sem-select-and-search">
+      <!-- Sem Selector -->
+      <form action="" class="sem-selector-form">
         <div class="sem-selector">
           <p>Please select the semester to select the courses</p>
           <div class="semester">
             <select name="semester" id="">
-              <option value="sem1"><span> None</span></option>
-              <option value="sem1"><span> 1st sem</span></option>
-              <option value="sem2"><span> 2nd sem</span></option>
-              <option value="sem3"><span> 3rd sem</span></option>
+              <option value="None"><span> None</span></option>
+              <option value="1"><span> 1st sem</span></option>
+              <option value="2"><span> 2nd sem</span></option>
+              <option value="3"><span> 3rd sem</span></option>
+              <option value="4"><span> 4th sem</span></option>
+              <option value="5"><span> 5th sem</span></option>
+              <option value="6"><span> 6th sem</span></option>
+              <option value="7"><span> 7th sem</span></option>
+              <option value="8"><span> 8th sem</span></option>
             </select>
           </div>
+          <button type="submit">Submit</button>
         </div>
+      </form>
 
-        <div class="search-bar-items">
-          <div class="search-bar-icon">
-            <i class="fa fa-search"></i>
-          </div>
-          <div class="search-bar-input">
-            <input type="text" placeholder="Search..." />
-          </div>
+      <div class="search-bar-items">
+        <div class="search-bar-icon">
+          <i class="fa fa-search"></i>
         </div>
-      </section>
+        <div class="search-bar-input">
+          <input id="searchbar-filter-input" type="text" placeholder="Search..." />
+        </div>
+      </div>
+    </section>
 
-      <!-- Table of courses -->
+    <!-- Table of courses -->
+    <form action="" id="submit-form-courses">
       <section class="section-course-table">
         <div class="courses-table">
           <table>
@@ -108,28 +104,30 @@
                 <th>Enroll (Yes/No)</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Image Processing</td>
-                <td>4</td>
-                <td>Trilok Panth</td>
-                <td>50</td>
-                <td>CSE</td>
-                <td></td>
-              </tr>
+            <tbody id="courses-table-body">
+              <!-- <tr>
+            <td>Image Processing</td>
+            <td>4</td>
+            <td>Trilok Panth</td>
+            <td>50</td>
+            <td>CSE</td>
+            <td></td>
+          </tr> -->
             </tbody>
           </table>
         </div>
         <div class="button-div">
-          <button class="submit-courses">Submit</button>
+          <button type="submit" class="submit-courses">Submit</button>
         </div>
       </section>
-      <!-- Footer -->
-      <footer>
-        <div class="footer">
-          <p>Copyrights &copy;Duke University</p>
-        </div>
-      </footer>
-    </div>
-  </body>
+    </form>
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <p>Copyrights &copy;Duke University</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
