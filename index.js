@@ -151,7 +151,6 @@ let submitFormCourses = document.querySelector("#submit-form-courses");
 submitFormCourses.addEventListener("submit", function (event) {
 
     event.preventDefault();
-
     //  register them in myCourses 
     let extraCourses = [];
 
@@ -170,10 +169,17 @@ submitFormCourses.addEventListener("submit", function (event) {
             console.log("successfully selected");
             let tds = tr.querySelectorAll('td');
 
-            for(let i=0; i<tds.length-1; i++)
-            {
-                console.log(tds[i].name);
-            }
+            // CourseName	Credits	Professor	Limit	Eligibility	Enroll (Yes/No)
+            let course = {};
+            course.courseName = tds[0].innerHTML;
+            course.credits = tds[1].innerHTML;
+            course.professor = tds[2].innerHTML;
+            course.limit = tds[3].innerHTML;
+            course.eligibility = tds[4].innerHTML;
+            course.sem= getRegisterSem();
+            extraCourses.push(course);
         }
     });
+
+    addCoursesInMyCourses(extraCourses);
 });
