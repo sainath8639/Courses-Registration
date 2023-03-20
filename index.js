@@ -5,14 +5,11 @@ function checkSelectedSemAtRefresh() {
 
     let selectedSem = getRegisterSem();
     // console.log(selectedSem);
-
     if (selectedSem == "None") {
         // make the data null
         // console.log("Already Enrolled");
         return;
     }
-
-
     // try to retain the register sem when refresh
     // create element named event 
     // let event = {};
@@ -28,7 +25,7 @@ checkSelectedSemAtRefresh();
 
 let semSelectForm = document.querySelector(".sem-selector-form");
 
-semSelectForm.addEventListener("submit", function (event) {
+semSelectForm.addEventListener("change", function (event) {
     event.preventDefault();
     let val = semSelectForm.elements["semester"].value;
     setRegisterSem(val);
@@ -89,7 +86,16 @@ semSelectForm.addEventListener("submit", function (event) {
 
         coursesTableBody.appendChild(courseTableRow);
     });
+
+    
 });
+
+
+// let selectSemester  = document.querySelector(".select-semester");
+
+// selectSemester.addEventListener("change", function(event) {
+//     console.log("changed")
+// })
 
 
 let searchFilterInput = document.querySelector("#searchbar-filter-input");
@@ -147,7 +153,7 @@ let submitFormCourses = document.querySelector("#submit-form-courses");
 
 submitFormCourses.addEventListener("submit", function (event) {
 
-    event.preventDefault();
+    // event.preventDefault();
     //  register them in myCourses 
     let extraCourses = [];
 
@@ -175,6 +181,6 @@ submitFormCourses.addEventListener("submit", function (event) {
             extraCourses.push(course);
         }
     });
-
     addCoursesInMyCourses(extraCourses);
+    alert("Course Registration Successfull!");
 });

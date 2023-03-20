@@ -15,13 +15,13 @@ let currSem = "All";
 let registerSem = "None";
 
 export function getCurrentSem() {
-  // return currSem ;
-  return localStorage.getItem("currentSem");
+  return currSem ;
+  // return localStorage.getItem("currentSem");
 }
 
 export function getRegisterSem() {
-  //  return registerSem
-  return localStorage.getItem("registerSem");
+   return registerSem
+  // return localStorage.getItem("registerSem");
 }
 export function setCurrSem(val) {
   localStorage.setItem("currentSem", val);

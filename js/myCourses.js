@@ -39,7 +39,7 @@ loadMyCoursesFromLocalStorage();
 
 let semSelectForm = document.querySelector(".sem-selector-form");
 
-semSelectForm.addEventListener("submit", function (event) {
+semSelectForm.addEventListener("change", function (event) {
   event.preventDefault();
   let val = semSelectForm.elements["semester"].value;
 

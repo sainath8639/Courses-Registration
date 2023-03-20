@@ -216,11 +216,11 @@ a:hover {
   justify-content: space-between;
   overflow-y: auto;
   padding: 20px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .course-item {
-  width: 320px;
+  width: 300px;
   padding: 30px;
   background-color: #223243;
   border-radius: 1rem;
@@ -234,7 +234,7 @@ a:hover {
 }
 
 .course-item:hover {
-  box-shadow: -1px 0px 20px 9px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.75);
   justify-content: center;
   cursor: pointer;
 }
