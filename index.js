@@ -40,7 +40,8 @@ semSelectForm.addEventListener("change", function (event) {
         );
         return;
     }
-
+    setRegisterSem(val)
+    
     let semCourses = getCoursesBySemester(val);
     // add each course to the body
     // console.log(semCourses);

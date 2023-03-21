@@ -1,13 +1,21 @@
 import {
   getSelectedCoursesBySemester,
   getMyCoursesMatchedResultsForInput,
-  setCurrSem
+  setCurrSem,
+  getCurrentSem,
+  fetchCourseNames
 } from "../global.js";
+
+
+
 // Loading data from Local Storage to the courses table
-function loadMyCoursesFromLocalStorage() {
-  let courses = JSON.parse(localStorage.getItem("myCourses"));
-  // console.log("courses are ");
-  // console.log(courses);
+async function loadMyCoursesFromLocalStorage() {
+  let courses = getSelectedCoursesBySemester(getCurrentSem());
+  console.log("called")
+
+  
+  //Loading from Rapid Api 
+  await fetchCourseNames(courses);
 
   let coursesDiv = document.querySelector("#course-items");
   coursesDiv.innerHTML = "";
