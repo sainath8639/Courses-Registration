@@ -4,8 +4,7 @@ export function storeObjectInLocalStorage(object, key) {
 }
 
 export function loadObjectFromLocalStorage(key) {
-
-  // if key is myCourses then load from api 
+  // if key is myCourses then load from api
   // if (key == 'myCourses') {
   //   let ret = [];
   //   await fetchCourseNames(ret).then(()=>{
@@ -13,7 +12,7 @@ export function loadObjectFromLocalStorage(key) {
   //     console.log(ret);
   //     return ret;
   //   });
-  //   // stop for 2 sec and return 
+  //   // stop for 2 sec and return
   // }
   return JSON.parse(localStorage.getItem(key));
 }
@@ -31,7 +30,7 @@ export function getCurrentSem() {
 }
 
 export function getRegisterSem() {
-  return registerSem
+  return registerSem;
   // return localStorage.getItem("registerSem");
 }
 export function setCurrSem(val) {
@@ -252,26 +251,23 @@ let myCourses = [
 ];
 
 function setStaticDataToLocalStorage() {
-  console.log("set")
+  console.log("set");
   storeObjectInLocalStorage(myCourses, "myCourses");
 }
 // setStaticDataToLocalStorage();
-
 
 // storeObjectInLocalStorage(myCourses, "myCourses");
 // storeObjectInLocalStorage(allCourses, "allCourses");
 
 export function addCoursesInMyCourses(extraCourses) {
-
   // console.log("adding")
   // console.log(extraCourses);
   let myCourses = loadObjectFromLocalStorage("myCourses");
-  extraCourses.forEach(course => {
+  extraCourses.forEach((course) => {
     myCourses.push(course);
   });
   storeObjectInLocalStorage(myCourses, "myCourses");
 }
-
 
 /* ---------------------------------------------------------------------------Admin -------------------------------------------------------------------------- */
 
@@ -309,32 +305,62 @@ export function getMyCoursesMatchedResultsForInput(val) {
   });
 }
 
-
-
 /*------------------------------------------------------------------------------ Rapid Api Start -------------------------------------------------------------------------*/
 const options = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    'X-RapidAPI-Key': '8f499c97d2msh9eb4d1659e367b6p1da607jsn3f6d571d91ac',
-    'X-RapidAPI-Host': 'udemy-course-scrapper-api.p.rapidapi.com'
-  }
+    "X-RapidAPI-Key": "8f499c97d2msh9eb4d1659e367b6p1da607jsn3f6d571d91ac",
+    "X-RapidAPI-Host": "udemy-course-scrapper-api.p.rapidapi.com",
+  },
 };
-
 
 let coruseNames = [];
 
 let instructorNames = [];
 
-
+//  with async and await 
 export async function fetchCoursesFromRapidApi(courses) {
+  try {
+    let responses = await Promise.all([
+      fetch(
+        "https://udemy-course-scrapper-api.p.rapidapi.com/course-names",
+        options
+      ),
+      fetch(
+        "https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor",
+        options
+      ),
+    ]);
+
+    
+    let res = responses.map((data) => data.json());
+    coruseNames = Object.values(res[0]);
+    instructorNames = Object.values(res[1]);
+    console.log("changed to async and awaiting");
+    loadCoursesFromApiAndReplaceLocalStorageValues();
+  } catch (e) {
+    console.log("error while fetching data");
+  }
+}
+
+// with  promises
+export async function fetchCoursesFromRapidApi1(courses) {
   Promise.all([
-    fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options),
-    fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor', options)
+    fetch(
+      "https://udemy-course-scrapper-api.p.rapidapi.com/course-names",
+      options
+    ),
+    fetch(
+      "https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor",
+      options
+    ),
   ])
     .then(function (responses) {
-      return Promise.all(responses.map(function (response) {
-        return response.json();
-      }));
+      return Promise.all(
+        responses.map(function (response) {
+          return response.json();
+        })
+      );
     })
     .then(function (jsonData) {
       var responseValues = jsonData.map(function (json) {
@@ -342,7 +368,7 @@ export async function fetchCoursesFromRapidApi(courses) {
       });
       coruseNames = Object.values(responseValues[0]);
       instructorNames = Object.values(responseValues[1]);
-      console.log("changed")
+      console.log("changed");
       loadCoursesFromApiAndReplaceLocalStorageValues();
     })
     .catch(function (error) {
@@ -351,11 +377,16 @@ export async function fetchCoursesFromRapidApi(courses) {
 }
 
 
+
 function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
   courses = [];
-  for (let i = 0; i < Math.min(coruseNames.length, instructorNames.length); i++) {
-    let obj = {};   // name , prof , sem ,  credits 4
-    obj.courseName = coruseNames[i].course_name
+  for (
+    let i = 0;
+    i < Math.min(coruseNames.length, instructorNames.length);
+    i++
+  ) {
+    let obj = {}; // name , prof , sem ,  credits 4
+    obj.courseName = coruseNames[i].course_name;
     obj.credits = 4;
     obj.professor = instructorNames[i].instructor;
     obj.sem = Math.round(Math.random() * 7) + 1;
@@ -378,41 +409,51 @@ function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
     coursesDiv.appendChild(courseDiv);
   });
 
-  storeObjectInLocalStorage(courses, "myCourses")
+  storeObjectInLocalStorage(courses, "myCourses");
 }
-
 
 // primise chaining
 export async function fetchCourseNames1(courses) {
-  await fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options)
-    .then(response => response.json())
-    .then(response => {
+  await fetch(
+    "https://udemy-course-scrapper-api.p.rapidapi.com/course-names",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
       coruseNames = Object.values(response);
       // now fetch the Instructors
       // console.log("calling Instructors");
       fetchInstructorNames(courses);
     })
-    .catch(err => console.error(err));
+    .catch((err) => console.error(err));
 }
 
 async function fetchInstructorNames(courses) {
-  await fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor', options)
-    .then(response => response.json())
-    .then(response => {
+  await fetch(
+    "https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor",
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
       instructorNames = Object.values(response);
       // now display them
       // console.log("calling display");
       // displayCourseAndInstructorNames();
       loadCoursesFromApiAndReplaceLocalStorageValues();
     })
-    .catch(err => console.error(err));
+    .catch((err) => console.error(err));
 }
 
 function displayCourseAndInstructorNames() {
-  for (let i = 0; i < Math.min(coruseNames.length, instructorNames.length); i++) {
-    console.log(`Course ${coruseNames[i].course_name} is going to be taught by ${instructorNames[i].instructor} `)
+  for (
+    let i = 0;
+    i < Math.min(coruseNames.length, instructorNames.length);
+    i++
+  ) {
+    console.log(
+      `Course ${coruseNames[i].course_name} is going to be taught by ${instructorNames[i].instructor} `
+    );
   }
 }
-
 
 /*------------------------------------------------------------------------------ Rapid Api End -------------------------------------------------------------------------*/
