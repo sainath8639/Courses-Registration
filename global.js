@@ -251,7 +251,7 @@ let myCourses = [
   },
 ];
 
-function setStaticDataToLocalStorage(){
+function setStaticDataToLocalStorage() {
   console.log("set")
   storeObjectInLocalStorage(myCourses, "myCourses");
 }
@@ -325,7 +325,35 @@ let coruseNames = [];
 
 let instructorNames = [];
 
+
 export async function fetchCourseNames(courses) {
+  Promise.all([
+    fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options),
+    fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor', options)
+  ])
+    .then(function (responses) {
+      return Promise.all(responses.map(function (response) {
+        return response.json();
+      }));
+    })
+    .then(function (jsonData) {
+      var responseValues = jsonData.map(function (json) {
+        return Object.values(json);
+      });
+      coruseNames = Object.values(responseValues[0]);
+      instructorNames = Object.values(responseValues[1]);
+      console.log("changed")
+      loadCoursesFromApiAndReplaceLocalStorageValues();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+
+
+
+export async function fetchCourseNames1(courses) {
   await fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options)
     .then(response => response.json())
     .then(response => {
@@ -335,8 +363,6 @@ export async function fetchCourseNames(courses) {
       fetchInstructorNames(courses);
     })
     .catch(err => console.error(err));
-
-    console.log("Fasdfa");
 }
 
 async function fetchInstructorNames(courses) {
@@ -360,9 +386,7 @@ function displayCourseAndInstructorNames() {
 
 function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
   courses = [];
-  // console.log("laded")
   for (let i = 0; i < Math.min(coruseNames.length, instructorNames.length); i++) {
-
     let obj = {};   // name , prof , sem ,  credits 4
     obj.courseName = coruseNames[i].course_name
     obj.credits = 4;
