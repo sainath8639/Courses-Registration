@@ -318,7 +318,7 @@ let coruseNames = [];
 
 let instructorNames = [];
 
-//  with async and await 
+//  with async and await
 export async function fetchCoursesFromRapidApi(courses) {
   try {
     let responses = await Promise.all([
@@ -332,11 +332,11 @@ export async function fetchCoursesFromRapidApi(courses) {
       ),
     ]);
 
-    
-    let res = responses.map((data) => data.json());
-    coruseNames = Object.values(res[0]);
-    instructorNames = Object.values(res[1]);
-    console.log("changed to async and awaiting");
+    coruseNames = await responses[0].json();
+    instructorNames = await responses[1].json();
+    coruseNames = Object.values(coruseNames);
+    instructorNames = Object.values(instructorNames);
+    console.log(instructorNames);
     loadCoursesFromApiAndReplaceLocalStorageValues();
   } catch (e) {
     console.log("error while fetching data");
@@ -375,8 +375,6 @@ export async function fetchCoursesFromRapidApi1(courses) {
       console.log(error);
     });
 }
-
-
 
 function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
   courses = [];
