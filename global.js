@@ -326,7 +326,7 @@ let coruseNames = [];
 let instructorNames = [];
 
 
-export async function fetchCourseNames(courses) {
+export async function fetchCoursesFromRapidApi(courses) {
   Promise.all([
     fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options),
     fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor', options)
@@ -351,8 +351,38 @@ export async function fetchCourseNames(courses) {
 }
 
 
+function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
+  courses = [];
+  for (let i = 0; i < Math.min(coruseNames.length, instructorNames.length); i++) {
+    let obj = {};   // name , prof , sem ,  credits 4
+    obj.courseName = coruseNames[i].course_name
+    obj.credits = 4;
+    obj.professor = instructorNames[i].instructor;
+    obj.sem = Math.round(Math.random() * 7) + 1;
+    // console.log(obj);
+    courses.push(obj);
+  }
+
+  let coursesDiv = document.querySelector("#course-items");
+  coursesDiv.innerHTML = "";
+  courses.forEach((course) => {
+    let courseDiv = document.createElement("div");
+    courseDiv.classList.add("course-item");
+
+    courseDiv.innerHTML = `
+    <p>Course: ${course.courseName}</p>
+    <p>Credits: ${course.credits}</p>
+    <p>Professor: ${course.professor}</p>
+    <p>Sem: ${course.sem}</p>`;
+
+    coursesDiv.appendChild(courseDiv);
+  });
+
+  storeObjectInLocalStorage(courses, "myCourses")
+}
 
 
+// primise chaining
 export async function fetchCourseNames1(courses) {
   await fetch('https://udemy-course-scrapper-api.p.rapidapi.com/course-names', options)
     .then(response => response.json())
@@ -384,33 +414,5 @@ function displayCourseAndInstructorNames() {
   }
 }
 
-function loadCoursesFromApiAndReplaceLocalStorageValues(courses) {
-  courses = [];
-  for (let i = 0; i < Math.min(coruseNames.length, instructorNames.length); i++) {
-    let obj = {};   // name , prof , sem ,  credits 4
-    obj.courseName = coruseNames[i].course_name
-    obj.credits = 4;
-    obj.professor = instructorNames[i].instructor;
-    obj.sem = Math.round(Math.random() * 7) + 1;
-    // console.log(obj);
-    courses.push(obj);
-  }
 
-  let coursesDiv = document.querySelector("#course-items");
-  coursesDiv.innerHTML = "";
-  courses.forEach((course) => {
-    let courseDiv = document.createElement("div");
-    courseDiv.classList.add("course-item");
-
-    courseDiv.innerHTML = `
-    <p>Course: ${course.courseName}</p>
-    <p>Credits: ${course.credits}</p>
-    <p>Professor: ${course.professor}</p>
-    <p>Sem: ${course.sem}</p>`;
-
-    coursesDiv.appendChild(courseDiv);
-  });
-
-  storeObjectInLocalStorage(courses, "myCourses")
-}
 /*------------------------------------------------------------------------------ Rapid Api End -------------------------------------------------------------------------*/

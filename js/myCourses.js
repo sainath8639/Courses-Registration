@@ -3,7 +3,7 @@ import {
   getMyCoursesMatchedResultsForInput,
   setCurrSem,
   getCurrentSem,
-  fetchCourseNames
+  fetchCoursesFromRapidApi
 } from "../global.js";
 
 
@@ -15,7 +15,7 @@ async function loadMyCoursesFromLocalStorage() {
 
   
   //Loading from Rapid Api 
-  await fetchCourseNames(courses);
+  await fetchCoursesFromRapidApi(courses);
 
   let coursesDiv = document.querySelector("#course-items");
   coursesDiv.innerHTML = "";
